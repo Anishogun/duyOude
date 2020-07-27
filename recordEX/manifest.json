@@ -1,0 +1,30 @@
+{
+  "manifest_version": 2,
+  "name": "OuExam",
+  "version": "1.0",
+  "icons": {
+    "16": "off.png",
+    "128": "off.png"
+  },
+  "permissions": ["contextMenus","notifications", "http://*/*", "https://*/*", "desktopCapture", "system.display","unlimitedStorage"
+  ],
+
+  "background": {
+    "scripts": ["background.js", "jquery.min.js", "jquery-ui.min.js"],
+    "persistant": false,
+    "matches": ["http://*/*", "https://*/*"]
+  },
+
+  "content_scripts": [{
+    "matches": ["http://*/*", "https://*/*"],
+    "js": ["content.js", "jquery.min.js", "jquery-ui.min.js"]
+  }],
+
+  "browser_action": {
+    "default_icon": "off.png",
+    "default_title" : "Wakarimasen",
+    "default_popup": "popup.html"
+  },
+  "web_accessible_resources": [
+  ]
+}
